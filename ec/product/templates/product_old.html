@@ -1,0 +1,14 @@
+{% csrf_token %}
+{% load static %}
+{% for product in products %}
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="{% static 'images/'%}{{ product.sImagePath }}" alt="Card image cap">
+  <div class="card-body">
+    
+    <h5 class="card-title">{{ product.sProductNm }}</h5><br> <h5 class="card-title">{{ product.sProductCd }}</h5>
+    <p class="card-text">{{ product.sProductDescription }}</p>
+    <p class="card-text">Price - {{ product.sProductPriceNr }}</p>
+    <a href="#" class="btn btn-primary">Buy Now</a>
+  </div>
+</div>
+{% endfor %}
